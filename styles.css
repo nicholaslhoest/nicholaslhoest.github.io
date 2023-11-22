@@ -1,0 +1,68 @@
+body {
+    background-color: #f4f0d7;
+    color: #383836;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+}
+
+#your-name {
+    background-color: transparent; /* No background for your name */
+}
+
+.big-button {
+    background-color: #ecb922;
+    color: #383836;
+    padding: 15px 30px; /* Increase padding for bigger buttons */
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Increase font size for bigger buttons */
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1; /* Ensure the button is rendered above the falling squares */
+    position: relative; /* Add position relative to ensure z-index works */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.big-button:hover {
+    background-color: #383836;; /* Darker shade on hover */
+    color: #ecb922;
+    box-shadow: 0 0 5px rgba(1, 0, 0, 0.1); /* Add drop shadow on hover */
+}
+
+#icon-container {
+    position: relative;
+    z-index: 2; /* Ensure the icon is rendered in front of everything else */
+}
+
+#falling-squares-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.falling-square {
+    position: absolute;
+    background-color: #ecb922;
+    animation: fallAnimation linear infinite;
+}
+
+@keyframes fallAnimation {
+    to {
+        transform: translateY(100vh);
+    }
+}
